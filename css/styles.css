@@ -382,7 +382,7 @@ div.imgTwitter {
     color: #7ed957;
     padding: 8px 15px 10px 15px;
     height: 41%;
-    width: 28%;
+    width: 26.5%;
     font-family: Arial;
     font-size: 1vw;
     text-align: justify;
@@ -554,7 +554,7 @@ div.imgTwitter {
     background-color: white;
     border: 2px solid black;
     padding: 0px 15px 8px 15px;
-    height: 36.3%;
+    height: 36%;
     width: 33.25%;
     font-family: Arial;
     font-size: 1vw;
@@ -740,12 +740,25 @@ div.imgTwitter {
 audio {
     z-index: 2;
     position: fixed; bottom: 38%; left: 1.2%;
-    width: 37.5%;
+    width: 20%;
+    height: 10%;
+}
+#audioText {
+    position: fixed; bottom: 35%; left: 22%;
+    width: 17.5%;
+    height: 10%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px solid black;
+    padding: 8px 15px 4px 15px;
+    font-family: Arial;
+    font-size: 1.3vw;
+    color: #7ed957;
 }
 #videoMainSchoolLife {
     z-index: 1;
     position:fixed; left: 1%; top: 3%;
-    padding: 15px 0px 15px 0px;
+    padding: 1% 0% 1% 0%;
     width: 37.5%;
     background-color: white ;
     border: 2px solid black;
@@ -928,7 +941,7 @@ audio {
 #pictureMainFamily {
     position:fixed; left: 1%; top: 3%;
     width: 37.5%;
-    height: 59%;
+    height: 58.5%;
     border: 2px solid black;
 }
 #picturesSubFamily {
@@ -1007,7 +1020,7 @@ audio {
     background-color: white;
     border: 2px solid black;
     padding: 0px 15px 8px 15px;
-    height: 37.3%;
+    height: 36.5%;
     width: 33.25%;
     font-family: Arial;
     font-size: 1.02vw;
