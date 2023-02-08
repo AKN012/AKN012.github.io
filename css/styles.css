@@ -42,7 +42,6 @@ video {
     transition: 1s;
     z-index: 1;
 }
-
 /* ---- Logo Styles ---- */
 
 .logoFormat1 {
@@ -95,6 +94,7 @@ video {
     text-align: center;
 }
 /* Footer */
+
 footer {
     box-sizing: border-box;
     position: fixed;
@@ -104,9 +104,17 @@ footer {
     padding: 0px;
     background-color: white;
 }
-footer p {
+footer p.left {
+    position: fixed;
+    bottom: -1%;
+    text-align: left;
+    font-size: 12px;
+    color: #6bda3b;
+    padding-left: 1%;
+}
+footer p.center {
     position: relative;
-    bottom: 4px;
+    bottom: 20%;
     text-align: center;
     font-size: 12px;
     color: #6bda3b;
@@ -168,9 +176,9 @@ div.imgTwitter {
     font-weight: bolder;
 }
 
-/* ---- Some Buttons ----*/
+/* ---- About Buttons ----*/
 
-.buttonAbout2 {
+.buttonAbout {
     position: fixed; right: 21.5%; top: 3%;
     background-color: white;
     border: 2px solid black;
@@ -181,10 +189,16 @@ div.imgTwitter {
     font-weight: bolder;
     cursor: pointer;
 }
-.buttonAbout2:hover {
+.buttonAbout:hover {
     background-color: #7ed957;
     color: white;
 }
+.buttonAbout:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
+
 
 /* -------------------------------------------- Home Page Styles ------------------------------------------ */
 
@@ -224,29 +238,17 @@ div.imgTwitter {
     cursor: pointer;
 }
 
-
 #navHomePage button:hover {
     background-color: #7ed957;
     color: white;
     transform: scale(1);
 }
-
-#buttonAbout1 {
-    position:fixed; right: 1%; top: 3%;
-    background-color: white;
-    border: 2px solid black;
-    padding: 6px;
-    height: 6.9%;
-    width: 11%;
-    font-size: 1.5vw;
-    color: #7ed957;
-    font-weight: bolder;
-    cursor: pointer;
-}
-#buttonAbout1:hover {
-    background-color: #7ed957;
+#navHomePage button:active {
+    background-color:#00c2cb;
     color: white;
+    transition: 0s;
 }
+
 #buttonAboutMyself {
     position: fixed; left: 33%; top: 3%;
     background-color: white;
@@ -264,6 +266,11 @@ div.imgTwitter {
     background-color: #7ed957;
     color: white;
 }
+#buttonAboutMyself:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
 #buttonElementaryLife {
     position:fixed; left: 35px; top: 29%;
     background-color: white;
@@ -279,6 +286,11 @@ div.imgTwitter {
 #buttonElementaryLife:hover {
     background-color: #7ed957;
     color: white;
+}
+#buttonElementaryLife:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
 }
 #buttonHighschoolLife {
     position:fixed; left: 35px; top: 39%;
@@ -296,6 +308,11 @@ div.imgTwitter {
     background-color: #7ed957;
     color: white;
 }
+#buttonHighschoolLife:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
 #buttonMyFamily {
     background-color: white;
     border: 2px solid black;
@@ -311,6 +328,11 @@ div.imgTwitter {
 #buttonMyFamily:hover {
     background-color: #7ed957;
     color: white;
+}
+#buttonMyFamily:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
 }
 /* Picture Styles */
 
@@ -471,7 +493,11 @@ div.imgTwitter {
     color: white;
     transform: scale(1);
 }
-
+#navMyselfPage button:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
 #buttonReturnAboutMyself {
     display: inline-block;
     background-color: white;
@@ -593,6 +619,11 @@ div.imgTwitter {
     background-color: #7ed957;
     color: white;
     transform: scale(1);
+}
+#navAboutPage button:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
 }
 /*headers, text, tables (About Page) */
 
@@ -849,7 +880,11 @@ audio {
     color: white;
     transform: scale(1);
 }
-
+#navSchoolPages button:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
 .buttonReturnSchoolLife {
     background-color: white;
     border: 2px solid black;
@@ -1009,7 +1044,11 @@ audio {
     color: white;
     transform: scale(1);
 }
-
+#navFamilyPage button:active {
+    background-color:#00c2cb;
+    color: white;
+    transition: 0s;
+}
 #buttonReturnFamily {
     display: inline-block;
     background-color: white;
