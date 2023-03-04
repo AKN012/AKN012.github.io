@@ -241,6 +241,7 @@ div.imgTwitter {
 #navHomePage button:hover {
     background-color: #7ed957;
     color: white;
+    transition: 0.5s;
     transform: scale(1);
 }
 #navHomePage button:active {
