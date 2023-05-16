@@ -3,32 +3,111 @@
 /* --------------------------------------------Universal------------------------------------------- */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Poppins', sans-serif;
-    color:rgb(204, 120, 25);
+    color: rgb(224, 76, 167);
 }
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background2.jpg");
     background-clip: content-box;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     text-align: center;
 }
-
-#plane{
-    width: 12%;
+header {
     position: fixed;
-    left: 15%;
-    top: 15%;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    padding: 20px 70px;
+    backdrop-filter: blur(50px);
+    justify-content: space-between;
+    z-index: 100;
 }
-#centerText{
+#logo {
+    font-size: 2em;
+    opacity: 1;
+}
+#nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 15px;
+    margin: 0 10px;
+    font-weight: 700;
+    transition: 0.5s;
+    opacity: 1;
+    font-size: 1.25em;
+}
+
+#centerContent1{
     z-index: 99;
     position: fixed;
-    top: 15%;
-    left: 50%;
+    top: 26%;
+    left: 10%;
+    width: 50%;
+}
+#centerText1{
+    position: relative;
     font-size: 5.5vw;
-    outline-color: rgb(204, 120, 25);
-    color: white;
+    color: black;
+    text-shadow: 0 0 15px rgb(224, 76, 167);
+}
+#plane{
+    position: relative;
+    float: left; 
+    width: 14%;
+}
+#indexButton1{
+    z-index: 99;
+    box-sizing: content-box;
+    position: fixed;
+    top: 50%;
+    left: 18.5%;
+    width: 25%;
+    padding: 1% 5% 1% 5%;
+    text-align: center;
+    font-size: 3.0vw;
+    font-weight: normal;
+    color: black;
+    background: none;
+    backdrop-filter: blur(50px);
+    border: 2px solid black;
+    border-radius: 25px;
+    text-shadow: 0 0 15px rgb(37, 37, 37);
+    transition: 0.3s linear;
+}
+#indexButton1:hover{
+    background-color: black;
+    color: rgb(221, 115, 180);
+    border: 2px solid black;
+    text-shadow: 0 0 15px rgb(224, 76, 167);
+}
+#indexButton1:active{
+    background-color: black;
+    opacity: 0.3;
+    color: rgb(221, 115, 180);
+    border: 2px solid black;
+    text-shadow: 0 0 15px rgb(224, 76, 167);
+    transition: 0.01s;
+}
+#sidebar {
+    width: 20%;
+    height: 80%;
+    position: fixed;
+    top: 12%;
+    right: 7.5%;
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+    z-index: 999;
+    padding: 1%;
+}
+#sidebar h1{
+    text-align: center;
+    font-size: 2.1vw
+}
+#sidebar li{
+    float: left;
 }
