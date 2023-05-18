@@ -3,31 +3,31 @@
     <head>
         <title> Flight Booking </title>
         <meta charset="UTF-8">
-        <meta name="descriptions" content="Home Page of the CS project">
+        <meta name="descriptions" content="Booking Page of the CS project">
         <meta name="keywords" content="CS Project, CSS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/CSS" href="css/styles.css">
-        <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+        <link rel="stylesheet" type="text/CSS" href="../css/styles.css">
+        <link rel="icon" type="image/x-icon" href="../images/Favicon.png">
     </head>
     <body>
-        <header>
+        <!-- <header>
             <h2 id="logo"> Escape Express </h2>
             <nav id="nav">
-                <a href="htdocs/booking.html?destination= "> Flight Booking </a>
+                <a href="../index.html"> Home </a>
                 <a href="htdocs/about.html"> About </a>
             </nav> 
-        </header>
-        <section id="centerContent1">
-            <figure>
-                <img src="images/plane2.png" id="plane">
-            </figure>
-            <h1 id="centerText1"> Flight Booking </h1>
-        </section>
-        <button id="indexButton1" onclick="bookingButton()"> Start Booking </button>
-        <section id="sidebar">
-            <h1> Trending </h1>
-            <ul>
-                <a href="htdocs/booking.html?destination=Bali-Indonesia"> <li> Bali, Indonesia </li></a><br>
+        </header> -->
+
+        <section id="booking">
+            <h2 id="bookingTitle1"> Booking </h2>
+            <form onsubmit="return submitResult()" id="bookingInputs">
+                <select class="inputs" id="destination" required onfocus="elementFocus(this)"  onblur="elementBlur(this)">
+                    <option value=""> Select </option>
+                    <option value="Bali-Indonesia"> Bali, Indonesia </option>
+                    <option value="Kyoto-Japan"> Kyoto, Japan </option>  
+                    <option value="Paris-France"> Paris, France </option>  
+                </select>
+                <!-- <a href="htdocs/booking.html?destination=Bali-Indonesia"> <li> Bali, Indonesia </li></a><br>
                 <a href="htdocs/booking.html?destination=Kyoto-Japan"> <li> Kyoto, Japan </li></a><br>    
                 <a href="htdocs/booking.html?destination=Paris-France"> <li> Paris, France </li></a><br>    
                 <a href="htdocs/booking.html?destination=Santorini-Greece"><li> Santorini, Greece </li></a><br>    
@@ -44,12 +44,12 @@
                 <a href="htdocs/booking.html?destination=Brazil"><li> Brazil</li></a><br>    
                 <a href="htdocs/booking.html?destination=Barcelona-Spain"><li> Barcelona, Spain</li></a><br>    
                 <a href="htdocs/booking.html?destination=Croatia"><li> Croatia </li></a><br>    
-                <a href="htdocs/booking.html?destination=Morocco"><li> Morocco </li></a><br>    
-            </ul>
+                <a href="htdocs/booking.html?destination=Morocco"><li> Morocco </li></a><br>   -->
+            </form>
         </section>
         <footer>
             
         </footer>
-        <script src="js/index.js"> </script>
+        <script src="../js/booking.js"> </script>
     </body>
 </html>
