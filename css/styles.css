@@ -121,3 +121,20 @@ header {
     padding: 0; 
     text-decoration: none;
 }
+
+/* -------------------------------------------- Booking Page ------------------------------------------------*/
+
+#centerContent2{
+    z-index: 99;
+    position: fixed;
+    top: 16%;
+    left: 10%;
+    width: 50%;
+}
+
+#bookingTitle1{
+    position: relative;
+    font-size: 4vw;
+    color: 0 0 15px rgb(224, 76, 167);
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+}
