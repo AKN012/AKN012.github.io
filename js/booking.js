@@ -6,6 +6,7 @@ let destination = document.getElementById("destination");
 
 destination.value = destinationValue;
 
+let result = document.getElementById("resultDisplay");
 
 function submitResult() {
     console.log()
@@ -15,6 +16,7 @@ function submitResult() {
 document.getElementById('bookingInputs').addEventListener('submit', function (event) {
     event.preventDefault();
     doLocationInfo(destination.value);
+    result.style.display = "block";
 });
 
 function doLocationInfo() {
@@ -38,7 +40,7 @@ function doLocationInfo() {
         if (result.length > 0) {
             var output = "";
             result.forEach(function(item) {
-            output += "Location: " + item.location + ", Price: " + item.price + "<br>";
+            output += "Location: " + item.location + " <br> Price: " + item.price + "<br>";
         });
 
             document.getElementById("result").innerHTML = output;
