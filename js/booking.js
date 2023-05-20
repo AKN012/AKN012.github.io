@@ -36,130 +36,162 @@ function doLocationInfo() {
         {
             value: 'Paris-France',
             location: 'Paris France',
+            timezone: '2',
         },
         {
             value: 'Santorini-Greece',
             location: 'Santorini, Greece',
+            timezone: '3',
         },
         {
             value: 'Tokyo-Japan',
             location: 'Tokyo, Japan',
+            timezone: '9',
         },
         {
             value: 'South-Africa',
             location: 'South Africa',
+            timezone: '2',
         },
         {
             value: 'Petra-Jordan',
             location: 'Petra, Jordan',
+            timezone: '3',
         },
         {
             value: 'Australia',
             location: 'Australia',
+            timezone: '10',
         },
         {
             value: 'Tanzania',
             location: 'Tanzania',
+            timezone: '3',
         },
         {
             value: 'Peru',
             location: 'Peru',
+            timezone: '-5',
         },
         {
             value: 'New-York-City-USA',
             location: 'New York City, USA',
+            timezone: '-4',
         },
         {
             value: 'Italy',
             location: 'Italy',
+            timezone: '1',
         },
         {
             value: 'Iceland',
             location: 'Iceland',
+            timezone: '0',
         },
         {
             value: 'Sydney-Australia',
             location: 'Sydney, Australia',
+            timezone: '10',
         },
         {
             value: 'Brazil',
             location: 'Brazil',
+            timezone: '-3',
         },
         {
             value: 'Croatia',
             location: 'Croatia',
+            timezone: '1',
         },
         {
             value: 'Morocco',
             location: 'Morocco',
+            timezone: '1',
         },
         {
             value: 'Toronto-Canada',
             location: 'Toronto, Canada',
+            timezone: '-4',
         },
         {
             value: 'Los-Angeles-USA',
             location: 'Los Angeles, USA',
+            timezone: '-7',
         },
         {
             value: 'Beijing-China',
             location: 'Beijing, China',
+            timezone: '8',
         },
         {
             value: 'Bangkok-Thailand',
             location: 'Bangkok, Thailand',
+            timezone: '7'
         },
         {
             value: 'Manila-Philippines',
             location: 'Manila, Philippines',
+            timezone: '8',
         },
         {
             value: 'Seoul-South-Korea',
             location: 'Seoul, South Korea',
+            timezone: '9',
         },
         {
             value: 'Vatican-City',
             location: 'Vatican-City',
+            timezone: '1',
         },
         {
             value: 'Hong-Kong',
             location: 'Hong Kong',
+            timezone: '8',
         },
         {
             value: 'Maldives',
             location: 'Maldives',
+            timezone: '5',
         },
         {
             value: 'Hanoi-Vietnam',
             location: 'Hanoi, Vietnam',
+            timezone: '7',
         },
         {
             value: 'Kuala-Lumpur-Malaysia',
             location: 'Kuala Lumpur, Malaysia',
+            timezone: '8',
         },
         {
             value: 'Berlin-Germany',
             location: 'Berlin, Germany',
+            timezone: '2',
         },
         {
             value: 'Madrid-Spain',
             location: 'Madrid, Spain',
+            timezone: '2',
         },
         {
             value: 'Oslo-Norway',
             location: 'Oslo, Norway',
+            timezone: '1',
         },
         {
             value: 'Stockholm-Sweden',
             location: 'Stockholm, Sweden',
+            timezone: '1',
         },
         {
             value: 'Amsterdam-Netherlands',
             location: 'Amsterdam, Netherlands',
+            timezone: '1',
         },
         {
             value: 'Belgium',
             location: 'Belgium',
+            timezone: '2',
         },
             ];
         var resultTo = data.filter(function(to) {
