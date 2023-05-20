@@ -14,13 +14,9 @@ let locationFromValue = locationFrom.value;
 
 let result = document.getElementById("resultDisplay");
 
-function submitResult() {
-    console.log()
-    return false;
-}
-
 document.getElementById('bookingInputs').addEventListener('submit', function (event) {
     event.preventDefault();
+
     doLocationInfo(destination.value);
     result.style.display = "block";
 });
@@ -172,54 +168,70 @@ function doLocationInfo() {
         var resultFrom = data.filter(function(from) {
             return from.value === locationFrom.value;
         });    
+
+        // Checks if the results are not empty
         if (resultTo.length > 0 && resultFrom.length > 0) {
             var timezoneFrom = resultFrom[0].timezone;
             var timezoneTo = resultTo[0].timezone; 
 
             let output = "<h1 style='color: black'> Ticket </h1>"
             
-            // Flight Times
+            // -----------------------------Flight Times--------------------------------- //
 
             let flightDuration = parseInt(document.getElementById("flightDura").value);
             let flightStart = document.getElementById("flightStart").value;
-    
-            flightStart = convertToStandardTime(flightStart);
             
+            // Convertion of flightStart to Standard Time
+            flightStart = convertToStandardTime(flightStart);
+
+            // Adds Take off and Duration to the Output
             output += "Flight Take Off: " + flightStart;
             output += "<br> Flight Duration: " + flightDuration;
-    
+            
+            // Found from internet 💀
             let [hours, minutes] = flightStart.split(":");
       
+            // Adding all the hours
             hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + parseInt(flightDuration);
             minutes = parseInt(minutes);
-    
+            
+            // Making Sure the hours is still in military time
             hours = hours % 24;
-      
+            
+            // Finalizing hour
             let formattedHours = hours.toString().padStart(2, "0");
             let formattedMinutes = minutes.toString().padStart(2, "0");
-      
+            
+            // Connecting Hours and Minutes
             let militaryTime = formattedHours + ":" + formattedMinutes;
-    
+            
+            // Converting to Standard
             let flightArrival = convertToStandardTime(militaryTime);
-    
+            console.log(flightArrival);
+            // Add to Output
             output += "<br> Flight Arrival: " + flightArrival;
 
-            // Flight Times End
+            // ------------------------------- Flight Times End ----------------------------------- //
 
+            // Add From to Output
             resultFrom.forEach(function(from) {
             output += "<br> From: " + from.location + "<br>";
-        });       
+        }); 
+            // Add To to Output
             resultTo.forEach(function(to) {
             output += "To: " + to.location + "<br>";
         });
-
+            // Display result
             document.getElementById("result").innerHTML = output;
         } 
 
         else {
+            // Triggers if their is no input
             document.getElementById("result").innerHTML = "No results found.";
         }
     }
+
+// Adds indication with blur
 function elementBlur(input) {
     input.style.outline = '2px solid transparent';
     if (input.value.trim() === '') {
@@ -229,12 +241,12 @@ function elementBlur(input) {
         input.style.border = '2px solid green';
     }
 }
-
+// Adds indication with focus
 function elementFocus(input) {
     input.style.outline = '2px solid green';
     input.style.border = '2px solid transparent';
 }
-
+// The converter from Military Time to Standard Time
 function convertToStandardTime(militaryTime) {
     var hour = parseInt(militaryTime.substr(0, 2));
     var minute = militaryTime.substr(3, 2);
