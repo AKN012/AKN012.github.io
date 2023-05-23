@@ -13,12 +13,14 @@ let locationFrom = document.getElementById("from");
 let locationFromValue = locationFrom.value; 
 
 let result = document.getElementById("resultDisplay");
+let addOns = document.getElementById("addOnsDisplay");
 
 document.getElementById('bookingInputs').addEventListener('submit', function (event) {
     event.preventDefault();
 
     doLocationInfo(destination.value);
     result.style.display = "block";
+    addOns.style.display ="block";
 });
 
 function doLocationInfo() {
@@ -145,12 +147,7 @@ function doLocationInfo() {
         },
         {
             value: 'Hong-Kong',
-            location: 'Hong Kong',
-            timezone: '8',
-        },
-        {
-            value: 'Maldives',
-            location: 'Maldives',
+             location: 'Maldives',
             timezone: '5',
         },
         {
@@ -165,7 +162,12 @@ function doLocationInfo() {
         },
         {
             value: 'Berlin-Germany',
-            location: 'Berlin, Germany',
+              location: 'Hong Kong',
+            timezone: '8',
+        },
+        {
+            value: 'Maldives',
+         location: 'Berlin, Germany',
             timezone: '2',
         },
         {
@@ -201,62 +203,62 @@ function doLocationInfo() {
             return from.value === locationFrom.value;
         });    
 
+        var timezoneFrom = resultFrom[0].timezone;
+        var timezoneTo = resultTo[0].timezone; 
+
+        let output = "<h1 style='color: black'> Ticket </h1>"
+        
+        // -----------------------------Flight Times--------------------------------- //
+
+        let flightDuration = parseInt(document.getElementById("flightDura").value);
+        let flightStart = document.getElementById("flightStart").value;
+        
+        // Convertion of flightStart to Standard Time
+        flightStart = convertToStandardTime(flightStart);
+
+        // Adds Take off and Duration to the Output
+        output += "Flight Take Off: " + flightStart;
+        output += "<br> Flight Duration: " + flightDuration;
+        
+        // Found from internet 💀
+        let [hours, minutes] = flightStart.split(":");
+  
+        // Adding all the hours
+        hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + parseInt(flightDuration);
+        minutes = parseInt(minutes);
+        
+        // Making Sure the hours is still in military time
+        hours = hours % 24;
+        
+        // Finalizing hour
+        let formattedHours = hours.toString().padStart(2, "0");
+        let formattedMinutes = minutes.toString().padStart(2, "0");
+        
+        // Connecting Hours and Minutes
+        let militaryTime = formattedHours + ":" + formattedMinutes;
+        
+        // Converting to Standard
+        let flightArrival = convertToStandardTime(militaryTime);
+        
+        // Add to Output
+        output += "<br> Flight Arrival: " + flightArrival;
+
+        // ------------------------------- Flight Times End ----------------------------------- //
+
+        // Add From to Output
+        resultFrom.forEach(function(from) {
+        output += "<br> From: " + from.location + "<br>";
+    }); 
+        // Add To to Output
+        resultTo.forEach(function(to) {
+        output += "To: " + to.location + "<br>";
+    });
+
         // Checks if the results are not empty
         if (resultTo.length > 0 && resultFrom.length > 0) {
-            var timezoneFrom = resultFrom[0].timezone;
-            var timezoneTo = resultTo[0].timezone; 
-
-            let output = "<h1 style='color: black'> Ticket </h1>"
-            
-            // -----------------------------Flight Times--------------------------------- //
-
-            let flightDuration = parseInt(document.getElementById("flightDura").value);
-            let flightStart = document.getElementById("flightStart").value;
-            
-            // Convertion of flightStart to Standard Time
-            flightStart = convertToStandardTime(flightStart);
-
-            // Adds Take off and Duration to the Output
-            output += "Flight Take Off: " + flightStart;
-            output += "<br> Flight Duration: " + flightDuration;
-            
-            // Found from internet 💀
-            let [hours, minutes] = flightStart.split(":");
-      
-            // Adding all the hours
-            hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + parseInt(flightDuration);
-            minutes = parseInt(minutes);
-            
-            // Making Sure the hours is still in military time
-            hours = hours % 24;
-            
-            // Finalizing hour
-            let formattedHours = hours.toString().padStart(2, "0");
-            let formattedMinutes = minutes.toString().padStart(2, "0");
-            
-            // Connecting Hours and Minutes
-            let militaryTime = formattedHours + ":" + formattedMinutes;
-            
-            // Converting to Standard
-            let flightArrival = convertToStandardTime(militaryTime);
-            console.log(flightArrival);
-            // Add to Output
-            output += "<br> Flight Arrival: " + flightArrival;
-
-            // ------------------------------- Flight Times End ----------------------------------- //
-
-            // Add From to Output
-            resultFrom.forEach(function(from) {
-            output += "<br> From: " + from.location + "<br>";
-        }); 
-            // Add To to Output
-            resultTo.forEach(function(to) {
-            output += "To: " + to.location + "<br>";
-        });
             // Display result
             document.getElementById("result").innerHTML = output;
         } 
-
         else {
             // Triggers if their is no input
             document.getElementById("result").innerHTML = "No results found.";
