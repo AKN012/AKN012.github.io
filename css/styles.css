@@ -12,7 +12,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
+}
   
   body {
     background-image: url("../images/background2.jpg");
@@ -127,11 +127,10 @@ header {
 #centerContent2{
     z-index: 99;
     position: fixed;
-    top: 16%;
+    top: 10%;
     left: 10%;
     width: 70%;
 }
-
 #bookingTitle1{
     position: relative;
     font-size: 4vw;
@@ -197,7 +196,7 @@ header {
     margin-top: 3%;
     width: 30%;
     z-index: 99;
-    font-size: 150%;
+    font-size: 100%;
     color: rgb(0, 0, 0);
     text-shadow: 0 0 15px rgb(224, 76, 167);
     border-radius: 25px;
@@ -205,7 +204,7 @@ header {
 #resultDisplay {
     display:none;
 }
-#addOns {
+#Customization {
     position: fixed;
     top: 15%;
     right: 2%;
@@ -214,11 +213,30 @@ header {
     margin-top: 3%;
     width: 30%;
     z-index: 99;
-    font-size: 150%;
-    color: rgb(0, 0, 0);
+    font-size: 100%;
+    color: rgb(224, 76, 167);
     text-shadow: 0 0 15px rgb(224, 76, 167);
     border-radius: 25px;
 }
-#addOnsDisplay {
+
+#CustomizationDisplay {
     display:none;
+}
+
+.inputs1 {
+    font-size: 100%;
+    position: relative;
+    left: 0%;
+    border-radius: 25px;
+    width: 35%;
+    margin-top: 1%;
+    background: white;
+    border:rgb(37, 37, 37);
+    cursor: pointer;
+    text-align: center;
+}
+#addOns inputs {
+    font-size: 100%;
+    float: left;
+    text-shadow: 0 0 15px rgb(224, 76, 167);
 }

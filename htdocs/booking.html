@@ -108,10 +108,24 @@
                 <div id="result"> </div>
             </div>
         </section>
-        <section id="addOnsDisplay">
-            <div id="addOns"> 
-                <h2>Select Add ons</h2>
-
+        <section id="CustomizationDisplay">
+            <div id="Customization"> 
+                <h3>Flight Customization</h3><br>
+                <h4> Class: </h4>
+                <select class="inputs1" id="class" onfocus="elementFocus(this)"  onblur="elementBlur(this)">
+                    <option value="3"> Select </option>
+                    <option value="1"> First (P60,000)   </option>
+                    <option value="2"> Buisness (P40,000) </option>
+                    <option value="3"> Economy (P20,000) </option>
+                </select>
+                <br><br>
+                <h4> Add Ons </h4>
+                <div id>
+                    <input class="inputs1" type="checkbox" value="250"> In flight Wifi (P250) <br>
+                    <input class="inputs1" type="checkbox" value="300"> Extra Leg Space (P300) <br>
+                    <input class="inputs1" type="checkbox" value="500"> Premium Food (P500) <br>
+                    <input class="inputs1" type="checkbox" value="400"> Proirity Boarding (P400) <br>
+                </div>
             </div>
         </section>
         <footer>

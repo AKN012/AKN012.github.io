@@ -13,7 +13,7 @@ let locationFrom = document.getElementById("from");
 let locationFromValue = locationFrom.value; 
 
 let result = document.getElementById("resultDisplay");
-let addOns = document.getElementById("addOnsDisplay");
+let addOns = document.getElementById("CustomizationDisplay");
 
 document.getElementById('bookingInputs').addEventListener('submit', function (event) {
     event.preventDefault();
