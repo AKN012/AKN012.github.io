@@ -312,3 +312,52 @@ header {
     text-shadow: 0 0 15px rgb(224, 76, 167);
     transition: 0.01s;
 }
+/* ------------------------------------------ About -------------------------------------------------------- */
+
+#centerContent3 {
+    z-index: 99;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 60%;
+    text-align: center;
+    transform: translate(-50%, 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+#centerText3 {
+    position: relative;
+    font-size: 4.5vw;
+    width: 70%;
+    color: black;
+    text-shadow: 0 0 15px rgb(224, 76, 167);
+  }
+  
+#plane2 {
+    position: relative;
+    width: 15%;
+  }
+
+#subtext {
+    position: fixed;
+    z-index: 99;
+    top: 40%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, 0%);
+}
+
+#subtext .content {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#subtext h2,
+#subtext h3,
+#subtext p {
+    text-align: left;
+}
