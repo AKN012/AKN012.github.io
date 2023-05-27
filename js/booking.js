@@ -307,11 +307,7 @@ function timeChange(){
 
 document.getElementById('customization').addEventListener('submit', function (event) {
     event.preventDefault();
-    
-    let once = 0;
-    if (once == 0){
-        customization()
-    }
+    customization()
 });
 
 function customization(){
@@ -369,5 +365,5 @@ function customization(){
 }
 
 function redirect(){
-    location.replace("../index.html")
+    location.replace("../index.html");
 }
