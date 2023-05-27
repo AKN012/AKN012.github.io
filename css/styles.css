@@ -48,6 +48,17 @@ header {
     font-size: 1.25vw;
 }
 
+footer {
+    height:6%;
+    padding: 1%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    backdrop-filter: blur(50px);
+    text-align: center;
+
+}
+/*---------------------------------------------------Index----------------------------------------------- */
 #centerContent1{
     z-index: 99;
     position: fixed;
