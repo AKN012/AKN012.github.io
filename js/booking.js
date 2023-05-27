@@ -13,7 +13,7 @@ let locationFrom = document.getElementById("from");
 let locationFromValue = locationFrom.value; 
 
 let result = document.getElementById("resultDisplay");
-let addOns = document.getElementById("CustomizationDisplay");
+let addOns = document.getElementById("customizationDisplay");
 
 document.getElementById('bookingInputs').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -28,7 +28,7 @@ function doLocationInfo() {
         {
             value: 'Bali-Indonesia',
             location: 'Bali, Indonesia',
-            timezone: '8',
+            timezone: '8', 
         },
         {
             value: 'Kyoto-Japan',
@@ -212,31 +212,31 @@ function doLocationInfo() {
 
         let flightDuration = parseInt(document.getElementById("flightDura").value);
         let flightStart = document.getElementById("flightStart").value;
-        
-        // Convertion of flightStart to Standard Time
-        flightStart = convertToStandardTime(flightStart);
+
+        let flightStartInput = convertToStandardTime(flightStart);
 
         // Adds Take off and Duration to the Output
-        output += "Flight Take Off: " + flightStart;
+        output += "Flight Take Off: " + flightStartInput;
         output += "<br> Flight Duration: " + flightDuration;
         
         // Found from internet 💀
         let [hours, minutes] = flightStart.split(":");
-  
+
         // Adding all the hours
         hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + parseInt(flightDuration);
-        minutes = parseInt(minutes);
-        
+        minutes = parseInt(minutes);    
+
         // Making Sure the hours is still in military time
         hours = hours % 24;
-        
+
         // Finalizing hour
         let formattedHours = hours.toString().padStart(2, "0");
         let formattedMinutes = minutes.toString().padStart(2, "0");
         
         // Connecting Hours and Minutes
+
         let militaryTime = formattedHours + ":" + formattedMinutes;
-        
+
         // Converting to Standard
         let flightArrival = convertToStandardTime(militaryTime);
         
@@ -294,6 +294,80 @@ function convertToStandardTime(militaryTime) {
         hour -= 12;
         period = "PM";
     }
+    else{
+        
+    }
 
 return hour + ":" + minute + " " + period;
+}
+
+function timeChange(){
+    doLocationInfo(destination.value);
+}
+
+document.getElementById('customization').addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    let once = 0;
+    if (once == 0){
+        customization()
+    }
+});
+
+function customization(){
+    doLocationInfo();
+
+    let output = document.getElementById("result").innerHTML;
+    let classes = document.getElementById("class").value ;
+    let price = 0;
+
+    if (classes == 1){
+        classes = "First Class" ;
+        price += 60000;
+    }
+    else if (classes == 2){
+        classes = "Buisness Class" ;
+        price += 40000;
+    }
+    else {
+        classes = "Economy Class"
+        price += 20000;
+    }
+    
+    output += "<h4 style='color: black;'> Class: " + classes + "</h4>";
+
+    output += "<strong><h2 style='color: black'> Add Ons: </h2><strong>"  ;
+
+    let wifi = document.getElementById("wifi");
+    let space = document.getElementById("space");
+    let food = document.getElementById("food");
+    let boarding = document.getElementById("boarding");
+    
+    if (wifi.checked == true){
+        output += "<h4 style='color:black; font-weight: 200'> In FLight Wifi  &#x2713 </h4>";
+        price += 250;
+    }
+    if (space.checked == true){
+        output += "<h4 style='color:black; font-weight: 200'> Extra Leg Space  &#x2713 </h4>";
+        price += 300;
+    }
+    if (food.checked == true){
+        output += "<h4 style='color:black; font-weight: 200'> Premium Food  &#x2713 </h4>";
+        price += 500;
+    }
+    if (boarding.checked == true){
+        output += "<h4 style='color:black; font-weight: 200'> Priority Boarding  &#x2713 </h4>";
+        price += 400;
+    }
+    if (boarding.checked == false && food.checked == false && space.checked == false && wifi.checked == false){
+        output += "<h4 style='color:black; font-weight: 600'> None  &#x2713 </h4>";
+    }
+    output += "<strong><h2 style='color: black'> Price: </h2><strong>" + `<strong><h2 style='color: black'> P ${price} </h2><strong>`;
+    output += "<button id='doneButton' onclick='redirect()'> Done </button>";
+    document.getElementById("result").innerHTML = output;
+
+}
+
+function redirect(){
+    location.replace("../index.html")
 }
