@@ -225,7 +225,7 @@ function doLocationInfo() {
         let addMinutes = 30+((flightDuration%1)/0.5);
         // Adding all the hours
         console.log(addMinutes);
-        hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + Math.floor(flightDuration+0.1);
+        hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + Math.floor(flightDuration);
         minutes = parseInt(minutes) + addMinutes;    
 
         // Making Sure the hours is still in military time
