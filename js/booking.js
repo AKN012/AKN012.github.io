@@ -203,28 +203,30 @@ function doLocationInfo() {
             return from.value === locationFrom.value;
         });    
 
-        var timezoneFrom = resultFrom[0].timezone;
-        var timezoneTo = resultTo[0].timezone; 
+        var timezoneFrom = parseInt(resultFrom[0].timezone);
+        var timezoneTo = parseInt(resultTo[0].timezone); 
 
         let output = "<h1 style='color: black'> Ticket </h1>"
         
         // -----------------------------Flight Times--------------------------------- //
-
-        let flightDuration = parseInt(document.getElementById("flightDura").value);
+        let flightDuration = 0;
+        
+        flightDuration = Math.abs((1.5)*((timezoneFrom+12)-(timezoneTo+12)));
+    
         let flightStart = document.getElementById("flightStart").value;
-
         let flightStartInput = convertToStandardTime(flightStart);
 
         // Adds Take off and Duration to the Output
         output += "Flight Take Off: " + flightStartInput;
-        output += "<br> Flight Duration: " + flightDuration;
+        output += "<br> Maximum Flight Duration: " + flightDuration;
         
         // Found from internet 💀
         let [hours, minutes] = flightStart.split(":");
-
+        let addMinutes = 30+((flightDuration%1)/0.5);
         // Adding all the hours
-        hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + parseInt(flightDuration);
-        minutes = parseInt(minutes);    
+        console.log(addMinutes);
+        hours = parseInt(hours) - parseInt(timezoneFrom) + parseInt(timezoneTo) + Math.floor(flightDuration+0.1);
+        minutes = parseInt(minutes) + addMinutes;    
 
         // Making Sure the hours is still in military time
         hours = hours % 24;
@@ -241,7 +243,7 @@ function doLocationInfo() {
         let flightArrival = convertToStandardTime(militaryTime);
         
         // Add to Output
-        output += "<br> Flight Arrival: " + flightArrival;
+        output += "<br> Flight Arrival " + flightArrival;
 
         // ------------------------------- Flight Times End ----------------------------------- //
 
